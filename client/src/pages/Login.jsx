@@ -27,14 +27,16 @@ export default function Login({ onLogin }) {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          data-cy="email"       // ✅ ajouté pour Cypress
         />
         <input
           placeholder="Mot de passe"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          data-cy="password"    // ✅ ajouté pour Cypress
         />
-        <button type="submit">Se connecter</button>
+        <button type="submit" data-cy="submit">Se connecter</button> {/* ✅ ajouté */}
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
